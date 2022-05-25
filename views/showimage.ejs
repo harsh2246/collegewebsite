@@ -1,0 +1,45 @@
+<style>
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload image</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <center>
+        <form action="/faculty/updatefacultypicture" method="post" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <input type="hidden" value="<%=result.fid%>" name="fid">
+                    <h3><%=result.fn%>&nbsp;<%=result.ln%></h3>
+                </tr>
+                <tr>
+                    <img src="/images/<%=result.image%>" width="200px" height="200px" alt="<%=result.fn%>" >
+                </tr>
+            </table>
+                <hr color="red" width="300">
+                <table align="center" border="0" >
+               <tr>
+                   <td align="center"><input type="file" name="image" required></td>
+               </tr>
+               <tr>
+                <td align="center">
+                    <input type="submit" class="btn btn-warning" value="Upload new image">
+                </td>
+                 </tr>
+                </table>
+            
+            
+        </form>
+    </center>
+</body>
+</html>

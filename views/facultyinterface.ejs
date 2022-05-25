@@ -1,0 +1,204 @@
+<style>
+    
+.subdiv{
+    display:flex;
+    width: 930px;
+    height:auto;
+    padding: 20px;
+    background:#dfe6e9;
+    border-radius: 15px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.root{
+    display:flex;
+    width: 100%;
+    height:90%;
+    background: white;
+    justify-content: center;
+    align-items: center;
+}
+.rowstyle{
+    width: 900px;
+    margin:5px;
+}
+.ab a span:hover{
+      background-color:#6495ED;
+      color:white;
+      border:none;
+    }
+    .ab a span{
+      color:black;
+      border:1px solid black;
+    }
+    
+
+</style>
+
+    
+    
+  
+<html>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/project.js">
+
+    </script>
+    <title>Faculty Interface</title>
+    <body>
+         
+    <nav class="navbar navbar-light bg-light"  >
+        <a class="navbar-brand" href="#" style="display:flex;flex-direction:row;">
+          <img src="/images/logos.png"   height="50px"  class="d-inline-block align-top" alt="">
+            <span style="display:flex;align-items:center; padding-left:45px;font-size: 30px;font-weight:bold;"><%=result.adminname%></span>
+            
+        </a>
+        <div style="display:flex;align-items:center;flex-direction:row;margin-left: auto;" class="ab" >
+           
+                <a href="/faculty/logout" style="margin-right:50px;font-weight: bold;letter-spacing:1px;text-decoration:none;" >
+                  <span style="display:flex;align-items:center; padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;font-size: 20px; border-radius:50px;">
+                    Logout
+                  </span>
+                </a>
+            
+            <span>
+                <img src="/images/graduation.png" alt="faculty" width="60px" style="border-radius: 10px;">
+            </span>
+                
+        </div>
+      </nav>
+      <div class="form-row" >
+        <div class="form-group col-md-2" style="display:flex;background:#DE3163;height:90vh; align-items:center;" >
+            <ul class="nav flex-column ">
+                <img src="/images/<%=result.picture%> " style="margin-left:50px;border-radius: 80px;" height="120px" width="120px">
+                <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/facultyinterface" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Add Faculties</a>
+                </li>
+                <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
+                  
+                    <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                    <a class="nav-link active" href="/faculty/studentinterface" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Add Students</a>
+                  </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/showallfaculties" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">List Faculties</a>
+                </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                    <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                    <a class="nav-link active" href="/faculty/showallstudents" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">List Students</a>
+                  </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-search" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/searchfaculty" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Search</a>
+                </li>
+                
+              </ul>
+          </div>
+        <div class="form-group col-md-8">
+            
+        
+     
+    <form action="/faculty/submitfaculty" method="post" enctype="multipart/form-data">
+    <div class="root">
+        <div class="subdiv">
+            <div class="row rowstyle">
+                <div class="col" style="font-size: 30px; font-weight: bold; letter-spacing: 1px; color: firebrick;">
+                    <img src="/images/fac.png" alt="faculty" width="100px">
+                    Faculty Interface
+                </div>
+                
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="text" class="form-control " placeholder="First Name" name="firstname">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+                </div>
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="date" class="form-control " placeholder="Birth Date" name="birthdate">
+                </div>
+                <div class="col" style="justify-content: center; display: flex; align-items: center;">
+                    <input type="radio" name="gender" value="Male">
+                    <i class="fas fa-male"  style="font-size: 35px; color: darkgreen;margin-left: 10px;margin-right: 20px;"></i>
+                    <input type="radio" name="gender" value="Female" >
+                    <i class="fas fa-female"  style="font-size: 35px; color: darkgreen;margin-left: 10px;"></i>
+                </div>
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="text" class="form-control " placeholder="Mobile no" name="mobileno">
+                </div>
+                <div class="col">
+                    <input type="email" class="form-control" placeholder="Email" name="email">
+                </div>
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="text" class="form-control " placeholder="Address" name="address">
+                </div>
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <select name="state" class="form-control" id="state">
+                        <option>-States-</option>
+                    </select>
+                </div>
+                <div class="col">
+                    
+                    <select name="city" class="form-control" id="city">
+                        <option>-Cities-</option>
+                    </select>
+
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" id="zipcode">
+                </div>
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="text" class="form-control " placeholder="Qualification" name="qualification">
+                </div>
+                <div class="col">
+                   <select name="department" class="form-control">
+                       <option value="cs">Computer Science</option>
+                       <option value="it">Information Technology</option>
+                       <option value="civil">Civil</option>
+                   </select>
+                </div>
+                
+            </div>
+            <div class="row rowstyle">
+                <div class="col">
+                    <input type="file" class="form-control " placeholder="upload image" name="image">
+                </div>
+            </div>
+            <div class="row rowstyle"  >
+                <div class="col" style="justify-content: center; display: flex; align-items: center;">
+                    <button type="submit" style="font-size: 18px; width: 350px;" class="btn btn-success form-control">Submit</button>
+                </div>
+                <div class="col" style="justify-content: center; display: flex; align-items: center;">
+                    <button type="reset" style="font-size: 18px; width: 350px;" class="btn btn-success form-control">Reset</button>
+                </div>
+            </div>
+            <div class="row rowstyle"  >
+                <div class="col" style="justify-content: center; display: flex; align-items: center;">
+                    <h3><%=msg%></h3>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+        
+</div>
+    </body>
+</html>

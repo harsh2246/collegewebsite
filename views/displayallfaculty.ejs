@@ -1,0 +1,167 @@
+<style>
+    .subdiv{
+        display:flex;
+        width: 1200px;
+        padding: 20px;
+       align-items: center;
+        border-radius: 15px;
+        justify-content: center;
+        flex-direction: column;
+     
+    }
+    .root{
+        display:flex;
+        width: 100%;
+        height:100%;
+        background: white;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 17px,15px,blue;
+        box-shadow: -17px,-15px,blue;
+    }
+    .rowstyle{
+        width: 900px;
+        margin:5px;
+       
+    }
+    .abc{
+        width:90px;
+    }
+    
+.ab a span:hover{
+      background-color:#6495ED;
+      color:white;
+      border:none;
+    }
+    .ab a span{
+      color:black;
+      border:1px solid black;
+    }
+    
+    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Details</title>
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light"  >
+        <a class="navbar-brand" href="#" style="display:flex;flex-direction:row;">
+          <img src="/images/logos.png"   height="50px"  class="d-inline-block align-top" alt="">
+            <span style="display:flex;align-items:center; padding-left:45px;font-size: 30px;font-weight:bold;"><%=data.adminname%></span>
+            
+        </a>
+        <div style="display:flex;align-items:center;flex-direction:row;margin-left: auto;" class="ab" >
+           
+                <a href="/faculty/logout" style="margin-right:50px;font-weight: bold;letter-spacing:1px;text-decoration:none;" >
+                  <span style="display:flex;align-items:center; padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;font-size: 20px; border-radius:50px;">
+                    Logout
+                  </span>
+                </a>
+            
+            <span>
+                <img src="/images/graduation.png" alt="faculty" width="60px" style="border-radius: 10px;">
+            </span>
+                
+        </div>
+      </nav>
+    <div class="form-row" >
+        <div class="form-group col-md-2" style="display:flex;background:#DE3163; height:90vh; align-items:center;" >
+            <ul class="nav flex-column ">
+              <img src="/images/<%=data.picture%> " style="margin-left:50px;border-radius: 80px;" height="120px" width="120px">
+                <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/facultyinterface" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Add Faculties</a>
+                </li>
+                <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
+                  
+                  <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/studentinterface" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Add Students</a>
+                </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/showallfaculties" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">List Faculties</a>
+                </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/showallstudents" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">List Students</a>
+                </li>
+                <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
+                  <i class="fas fa-search" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
+                  <a class="nav-link active" href="/faculty/searchfaculty" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Search</a>
+                </li>
+                
+              </ul>
+          </div>
+        <div class="form-group col-md-8">
+            <div class="root" >
+                <div class="subdiv" style="align-items: center;">
+                    <div class="row rowstyle">
+                        <div class="col" style=" margin-left:20px; border:3px solid black;font-size: 30px; font-weight: bold; letter-spacing: 1px; color: firebrick;">
+                            <h3>List Faculty</h3>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="row rowstyle" >
+                        <div class="col" style="  font-weight: bold; letter-spacing: 1px; color: firebrick;">
+                            <table class="table table-hover row-rowstyle" width=600px style="border:3px solid black;"  >
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Faculty Id</th>
+                                    <th scope="col">Faculty Name</th>
+                                    <th scope="col">Birth Date</th>
+                                    <th scope="col">Contact Details</th>
+                                    <th scope="col">Address</th>
+                                    <th scope="col">Qualification</th>
+                                    <th scope="col">Department</th>
+                                    <th scope="col">Picture</th>
+                                    <th scope="col">Action</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <%if(result){
+                                        result.map((item)=>{%>
+                                            <tr>
+                                            <td><%=item.facultyid%></td>
+                                            <td><%=(item.firstname)%>&nbsp;<%=(item.lastname)%><br><%=(item.gender)%></td>
+                                            <td width="110px"><%=item.birthdate.getDate()+"-"+item.birthdate.getMonth()+"-"+item.birthdate.getFullYear()%></td>
+                                            <td><%=(item.mobileno)%><br><%=(item.email) %></td>
+                                            <td width="200px"><%=item.address%><br><%=item.cityname%>,<%=item.statename%><br><%=item.zipcode%></td>
+                                            <td><%=item.qualification%></td>
+                                            <td><%=item.department%></td>
+                                            <td><a href="/faculty/showfacultyimage?fid=<%=item.facultyid%>&fn=<%=item.firstname%>&ln=<%=item.lastname%>&image=<%=item.image%>"><img src="/images/<%=item.image%>" width="70px" height="70px"></a></td>
+                                            <td ><button type="button"   style="margin-bottom:4px;font-size:20px;font-weight:bold;letter-spacing:1px;" onclick="location.href='/faculty/displaybyfacultyid?fid=<%=item.facultyid%>'" class="btn btn-info abc">Edit</button>
+                                                <button type="button" style="font-size:20px;font-weight:bold;letter-spacing:1px;" onclick="location.href='/faculty/deletefaculty?fid=<%=item.facultyid%>'" class="btn btn-danger abc">Delete</button></td>
+                                            </tr>
+                                            <% })
+                                        }
+                                        else{%>
+                                            
+                                            <h3>Server Error</h3>
+                                        <%}%>
+                                </tbody>
+                            </table>
+                            
+                        </div>
+                        
+                    </div>
+                    
+           
+            </div>
+        </div>
+    
+        </div>
+        
+      </div>
+            
+</body>
+</html>
