@@ -394,7 +394,6 @@ router.post('/submitmark', function (req, res, next) {
       , [req.body.sid.map((item,index)=>([item,req.body.mid,req.body.coursecode,1,req.body.classid,req.body.smarks[index]]))], function (error, result) {
         if (error) { console.log(error); }
         else { 
-          
          }
       }
     )
