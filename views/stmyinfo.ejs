@@ -36,7 +36,7 @@
             </a>
             <div style="display:flex;align-items:center;flex-direction:row;margin-left: auto;" class="ab" >
                
-                    <a href="/faculty/faclogout" style="margin-right:50px;font-weight: bold;letter-spacing:1px;text-decoration:none;" >
+                    <a href="/student/logout" style="margin-right:50px;font-weight: bold;letter-spacing:1px;text-decoration:none;" >
                       <span style="display:flex;align-items:center; padding-left:20px;padding-right:20px;padding-bottom:10px;padding-top:10px;font-size: 20px; border-radius:50px;">
                         Logout
                       </span>
@@ -56,21 +56,15 @@
                     <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
                       
                       <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
-                      <a class="nav-link active" href="/faculty/myinfo" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">My Info</a>
+                      <a class="nav-link active" href="/student/myinfo" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">My Info</a>
                     </li>
                     <li class="nav-item" style="display:flex;flex-direction:row;align-items:center;">
                       
                       <i class="fas fa-users" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
-                      <a class="nav-link active" href="/faculty/entermark?fid=<%=result.facultyid%>" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Enter Marks</a>
+                      <a class="nav-link active" href="/faculty/entermark?fid=<%=result.facultyid%>" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">See Marks</a>
                     </li>
-                    <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
-                      <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
-                      <a class="nav-link active" href="/faculty/showallfaculties" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Enter Attendance</a>
-                    </li>
-                    <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
-                      <i class="fas fa-list" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
-                      <a class="nav-link active" href="/faculty/showallstudents" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">List Students</a>
-                    </li>
+                    
+                    
                     <li class="nav-item" style="margin-top:30px;display:flex;flex-direction:row;align-items:center;">
                       <i class="fas fa-search" style="padding-left:10px;font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important"></i>
                       <a class="nav-link active" href="/faculty/searchfaculty" style="font-weight: bold;letter-spacing:2px;font-size:24px;color:#FFFFFF!important">Search</a>
@@ -79,7 +73,53 @@
                   </ul>
               </div>
             <div class="form-group col-md-8">
-                
+                <table class="table table-dark">
+                    
+                    <tbody>
+                        <tr>
+                       
+                        <td>Name</td>
+                        <td><%=result.firstname%> <%=result.lastname%></td>
+                        
+                        </tr>
+                        <tr>
+                        
+                        <td>Student id</td>
+                        <td><%=result.studentid%></td>
+                        
+                        </tr>
+                        <tr>
+                        
+                        <td>Email Id</td>
+                        <td><%=result.email%></td>
+                       
+                        </tr>
+                        <tr>
+                        
+                            <td>Birth Date</td>
+                            <td><%=result.birthdate%></td>
+                           
+                            </tr>
+                            <tr>
+                        
+                                <td>Gender</td>
+                                <td><%=result.gender%></td>
+                               
+                                </tr>
+                                <tr>
+                        
+                                    <td>Address</td>
+                                    <td><%=result.address%></td>
+                                   
+                                    </tr>
+                                    <tr>
+                        
+                                        <td>Department</td>
+                                        <td><%=result.department%></td>
+                                       
+                                        </tr>
+                    </tbody>
+                    </table>
             </div>
             
           </div>
